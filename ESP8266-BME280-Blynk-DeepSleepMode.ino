@@ -1,5 +1,5 @@
 //ESP8266 BME280 Blynk in Deep Sleep Mode
-//release 2017.3.21
+//release 2017.3.25
 //momma@nifty.com
 //Pragmas
 #define BLYNK_PRINT Serial    // Comment this out to disable prints and save space
@@ -70,15 +70,19 @@ void SetupBME280()
     Serial.print(" Pressure:");
     printFormattedFloat(pressureMostAccurate, 2);
     Serial.println();
-    //
+#endif
+//send sensed data to blink server
+  //Temperature
   tempMostAccurate = BME280.getTemperatureMostAccurate();
   char buff1[6];  
   dtostrf(tempMostAccurate, 3, 2, buff1);
   Blynk.virtualWrite(V0, String(buff1));
+  //Humidity
   humidityMostAccurate = BME280.getHumidityMostAccurate();
   char buf[6];
   dtostrf(humidityMostAccurate, 3, 2, buf);
   Blynk.virtualWrite(V1, String(buf));
+  //Pressure
   pressureMostAccurate = BME280.getPressureMostAccurate();
   char buf8[8];
   dtostrf(pressureMostAccurate, 5, 2, buf8);
@@ -87,7 +91,7 @@ void SetupBME280()
 Serial.println("Dive to Deep Sleep Mode");
 ESP.deepSleep(60000000);//deep sleep per every 60 sec
 delay(100);
-#endif 
+
 }
 
 //set up
