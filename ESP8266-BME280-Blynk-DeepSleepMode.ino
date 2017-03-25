@@ -101,8 +101,10 @@ delay(100);
   Serial.println("Begin Serial");
   Serial.begin(115200);
   Serial.println("Begin BME280");
+#endif
   Wire.begin();
   SetupBME280();
+#ifdef BLYNK_DEBUG
   Serial.println("Begin Wifi");
   Blynk.begin(auth, "ssid", "password");//ssid,pass
 #endif
