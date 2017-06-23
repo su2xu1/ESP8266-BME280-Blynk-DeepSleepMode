@@ -5,6 +5,11 @@
 #define BLYNK_PRINT Serial    // Comment this out to disable prints and save space
 #define BLYNK_DEBUG //For debug
 
+// Auth Token in the Blynk App and Wi-Fi-Setting
+const char* auth    = "blink-auth-token";
+const char* ssid    = "wifi-ssid";
+const char* pass    = "wifi-password";
+
 //Include Headers
 #include <ESP8266WiFi.h>
 #include <Wire.h> 
@@ -18,10 +23,6 @@ extern "C" {
 #include "user_interface.h"
 }
 
-
-// You should get Auth Token in the Blynk App.
-// Go to the Project Settings (nut icon).
-char auth[] = "xxxxxxxxxxxxxxxxxxxxxxxxxxx";
 
 //Variables
 SimpleTimer timer;//Timer valuables 2016/12/20
