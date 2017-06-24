@@ -1,5 +1,5 @@
 //ESP8266 BME280 Blynk in Deep Sleep Mode
-//release 2017.3.25
+//release 2017.6.24
 //momma@nifty.com
 //Pragmas
 #define BLYNK_PRINT Serial    // Comment this out to disable prints and save space
