@@ -26,8 +26,8 @@ ESP8266 core files are licensed under LGPL.
 
 
 ### History
-2017.06.24 v-0.2 Version
-2017.03.21 v-0.1 Version
+2017.06.24 v-0.2 Version<br>
+2017.03.21 v-0.1 Version<br>
 
 ### Credits
 momma@nifty.com
